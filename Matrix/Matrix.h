@@ -6,8 +6,6 @@
 class Matrix {
 public:
 	
-	void init(int di, int dj, bool isRandomDefault = true, double defaultValue = 0.0);
-
 	Matrix(int di, int dj, bool isRandomDefault = true, double defaultValue = 0.0);
 	Matrix(std::vector<double> vector);
 	Matrix() = default;
@@ -35,7 +33,7 @@ public:
 	Matrix elementWiseMultiply(const Matrix& other) const;
 
 private:
-	std::pair<int, int> dimensions;
+	std::pair<size_t, size_t> dimensions;
 	std::vector<double> body;
 };
 
