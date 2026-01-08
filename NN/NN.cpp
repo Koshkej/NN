@@ -1,6 +1,6 @@
 #include "NN.h"
 
-NN::SimplePerceptron::SimplePerceptron(int inputLayerNumber, int hiddenLayerNumber, int outputLayerNumber, double learningRate)
+NN::SimplePerceptron::SimplePerceptron(size_t inputLayerNumber, size_t hiddenLayerNumber, size_t outputLayerNumber, double learningRate)
 	: inputLayerNumber(inputLayerNumber)
 	, hiddenLayerNumber(hiddenLayerNumber)
 	, outputLayerNumber(outputLayerNumber)
@@ -9,8 +9,7 @@ NN::SimplePerceptron::SimplePerceptron(int inputLayerNumber, int hiddenLayerNumb
 	, weightsOutput_Hidden(outputLayerNumber, hiddenLayerNumber)
 {}
 
-std::vector<double> NN::SimplePerceptron::query(const std::vector<double>& input)
-{
+std::vector<double> NN::SimplePerceptron::query(const std::vector<double>& input) {
 
 #ifdef DEBUG
 	if (input.size() != inputLayerNumber) throw std::invalid_argument("Wrong input size");
@@ -26,8 +25,7 @@ std::vector<double> NN::SimplePerceptron::query(const std::vector<double>& input
 
 }
 
-void NN::SimplePerceptron::train(const std::vector<double>& input, const std::vector<double>& target)
-{
+void NN::SimplePerceptron::train(const std::vector<double>& input, const std::vector<double>& target) {
 
 #ifdef DEBUG
 	if (input.size()  != inputLayerNumber)  throw std::invalid_argument("Wrong input size");
